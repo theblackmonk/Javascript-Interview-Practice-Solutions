@@ -45,20 +45,18 @@ sum(array2)
 //Iterate once through whole array, and hash at each variable. Check each variable against hash map
 //Sum - variable = hashed value
 
-function sumHash(array){
+function sumHash(array, target){
     let hashMap = new Map()
     let remaining
-    array.forEach(i => {
+    
+    for(let i=0; i<array.length; i++){
         remaining = target - array[i]
-        if((remaining) = hashMap(remaining)){
-            console.log(hashMap(remaining), i)
-            return true
-        } else {
-            hashMap(remaining)
-            return false
-        }
-    })
+        if(hashMap.has(remaining)) return [i, hashMap.get(remaining)]
+        hashMap.set(array[i], i)
+    }
 }
+
+console.log("\n" +  "Index: " + sumHash(array2, target))
 
 
 //javascript functions as boolean practice-------------------------------------------
