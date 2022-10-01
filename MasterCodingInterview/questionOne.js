@@ -85,3 +85,37 @@ console.log("\n" + "commonItemsHash: " + commonItemsHash(array1, array2))
  */
 
 
+//testing to see how let x = {} (javascript object) declaration works------------------------------------------------------------------
+
+ const array5 = ['a', 'b', 'c', 'd', 'x']
+ const array6 = ['z', 'y', 'x']
+
+ function containsCommonItem2(arr1, arr2){
+    //loop through first array and create object where properties === items in the array
+    let map = {}
+    for(let i=0; i< arr1.length; i++){
+        if(!map[arr1[i]]){
+            const item = arr1[i]
+            map[item] = true
+        }
+    }
+    //loop through secnd array and check if item in secnd array exists on created object
+    for(let j=0;j< arr2.length; j++){
+        if(map[arr2[j]]){
+            console.log("\n" + "arr1: ", arr1 + "\n" + "arr2: ", arr2 + "\n" + "map: " + map[0], " ", map['a'])
+            return true
+        }
+    }
+    console.log("\n" + "arr1: ", arr1 + "\n" + "arr2: ", arr2  + "\n" + "map: " + map[0], " ", map['a'])
+    return false
+ }
+
+ console.log(containsCommonItem2(array5, array6))
+
+ //ES6 function version
+ function containsCommonItem3(arr1, arr2){
+    return arr1.some(item => arr2.includes(item))
+ }
+
+ console.log("\n ES6: " + containsCommonItem3(array5, array6))
+
