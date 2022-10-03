@@ -70,9 +70,9 @@ function reverse(str) {
     var reverseString = []
     for(let i=0;i<str.length;i++){
         
-        reverseString.push(str[str.length - i - 1])
+        reverseString.push(str[str.length - i - 1])     //start the pointer at the end of the old string and push to new string
     }
-    return reverseString.join('')
+    return reverseString.join('')                       //push to an array and then convert array to string
 }
 
 console.log("reverse1: " + reverse(sentence))
@@ -98,10 +98,15 @@ console.log("reverse4: " + reverse4(sentence))
 
 //Can you merge 2 sorted arrays into one that is still sorted
 
-const sorted1 = [1,2,5,6,7]
-const sorted2 = [3,4,5,6,8,9]
+const sorted1 = [3,4,5,0,0,0,0,0]
+const sorted2 = [1,2,5,6,7]
+var g = 3
+var v = sorted2.length
 
-function mergeSortedArrays(arr1, arr2){
+
+
+/*function mergeSortedArrays(arr1, arr2){
+
     const mergedArray = []
     const totalLength = arr1.length + arr2.length
 
@@ -119,10 +124,12 @@ function mergeSortedArrays(arr1, arr2){
         console.log("")
         if(pointer1 == arr1.length - 1){
             console.log("loop 1")
-            mergedArray.push(arr1[pointer1])
+            mergedArray.push(arr2[pointer2])
+            if(pointer2 <= arr2.length - 1) pointer2++
         } else if(pointer2 == arr2.length - 1){
             console.log("loop 2")
             mergedArray.push(arr1[pointer1])
+            if(pointer1 <= arr1.length - 1) pointer1++
         } else if(arr1[pointer1] < arr2[pointer2]){
             console.log("loop 3")
             mergedArray.push(arr1[pointer1])
@@ -140,4 +147,38 @@ function mergeSortedArrays(arr1, arr2){
     return mergedArray
 }
 
-console.log("\n" + mergeSortedArrays(sorted1, sorted2))
+console.log("\n" + mergeSortedArrays(sorted1, sorted2))*/
+
+var merge = function(nums1, m, nums2, n) {
+    let i = m - 1;
+    let j = n - 1;
+    let k = m + n - 1;
+    
+    while (i >= 0 && j >= 0) {
+        if (nums1[i] < nums2[j]) {
+            nums1[k] = nums2[j];
+            k--;
+            j--;
+        } else {
+            nums1[k] = nums1[i];
+            k--;
+            i--;
+        }
+    }
+    
+    while (j >= 0) {
+        nums1[k] = nums2[j];
+        k--;
+        j--;
+    }
+    
+    while (i >= 0) {
+        nums1[k] = nums1[i];
+        k--;
+        i--;
+    }
+    return nums1
+    
+};
+
+console.log("\n" + merge(sorted1, g, sorted2, v))

@@ -112,7 +112,9 @@ console.log("\n" + "commonItemsHash: " + commonItemsHash(array1, array2))
 
  console.log(containsCommonItem2(array5, array6))
 
- //ES6 function version
+
+
+ //ES6 function version -------------------------------------------------------------------
  function containsCommonItem3(arr1, arr2){
     return arr1.some(item => arr2.includes(item))
  }
