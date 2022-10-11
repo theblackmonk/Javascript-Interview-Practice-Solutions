@@ -31,7 +31,7 @@ console.log(strings)
 
 
 //Create a function that reverses a string--------------------------------------------
-/**
+/*
  * #1 Key Points
  * given s, longest substring that doesn't repeat
  * 

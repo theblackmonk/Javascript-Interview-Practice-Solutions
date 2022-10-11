@@ -144,6 +144,9 @@ console.log("\n" + myLinkedList.printList())
 
 
 
+//Reverse a linked list -------------------------------------
+
+
 
 
 

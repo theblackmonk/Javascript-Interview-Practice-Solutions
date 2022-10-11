@@ -1,4 +1,4 @@
-//Stacks and Queues
+//Stacks
 
 //Stack is Last in First Out like a stack of dishes in the sink
 class Stack {
@@ -67,6 +67,9 @@ console.log(myStack2.push("Google"))
 console.log(myStack2.pop())
 console.log(myStack2.peek())
 console.log(myStack2.peek())
+
+
+
 
 
 
