@@ -63,12 +63,48 @@ console.log("commonItems: " + commonItems(array1, array2))
 
 //Optimize Search with Hash Table (object) to get O(n) Linear Search Time
 
+console.log("\n\n" + "------")
+
+//hashtable Set() 1 loop store array1, 2nd loop check against hash table in for loop
+
+var searchArray = function(arr1, arr2){
+    let hashTable = new Set()
+
+    //Store array1
+    for(let i=0; i<arr1.length;i++){
+        hashTable.add(arr1[i])
+    }
+
+    //check pointer locaation against hashTable for match
+    for(let i=0; i<arr2.length;i++){
+        if(hashTable.has(arr2[i])) return true
+    }
+    return false
+
+}
+
+console.log(searchArray(array1, array4))
+
+
+
+
+console.log("-----" + "\n\n")
+
+
+
+
+
+
+
+
+
 //Time: O(n)   Space: O(n)
 function commonItemsHash(array1, array2){
     let hashTable = new Map()             //Map key:value pair incase I want to return the index of the match
     for(let i=0;i<array1.length;i++) hashTable.set(array1[i], i)
+    console.log("hashTable: ", hashTable)
     for(let i=0;i<array2.length;i++){
-        if(hashTable.has(array2[i])) return true
+        if(hashTable.has(array2[i])) {console.log("array2[i]", array2[i]); return true}
     } 
     return false
 }

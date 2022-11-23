@@ -4,6 +4,7 @@
 const strings = ['a', 'b', 'c', 'd']
 console.log(strings)
 
+
 //push O(1)
 strings.push('e')
 console.log(strings)
@@ -59,6 +60,29 @@ console.log(strings)
  * #11 Error Checks
  */
 
+console.log(`\n`+ "--------")
+
+const sentence2 = 'David'
+
+function Reverse(value) {
+    let stringLength = value.length
+    let reverseString = []
+
+    for(let i = 0; i<stringLength;i++){
+        reverseString.push(value[stringLength - i - 1])
+    }
+    
+    return (reverseString.join(''))
+    
+}
+
+console.log(Reverse(sentence2))
+
+console.log(`\n` + `\n` + "--------")
+
+
+//----------------------------------------------------------------
+
 const sentence = 'Hi My name is Andrei'
 
 function reverse(str) {
@@ -81,6 +105,9 @@ console.log("reverse1: " + reverse(sentence))
 //Optimize
 
 function reverse2(str) {
+    console.log("split: ", str.split(''))
+    console.log("reverse: ", str.split('').reverse())
+    console.log("join: ", str.split('').reverse().join(''))
     return str.split('').reverse().join('')
 }
 

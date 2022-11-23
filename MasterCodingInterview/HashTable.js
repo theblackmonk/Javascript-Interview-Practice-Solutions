@@ -107,6 +107,46 @@ var arr1 = [2,5,1,2,3,5,1,2,4]
 var arr2 = [2,1,1,2,3,5,1,2,4]
 var arr3 = [2,3,4,5]
 
+
+/*
+Check the whole array
+Hash Function, low time complexity, and low space complexity O(n), O(n)
+
+Search the array for value at pointer, if no then store value 
+*/
+
+var findDuplicate = function(arr){
+    const hashTable = new Set()
+
+    for(let i=0; i<arr.length;i++){
+        if(hashTable.has(arr[i])) return arr[i]
+        hashTable.add(arr[i])
+    }
+
+
+    return 'nothing repeats'
+}
+
+console.log("\n" + "duplicate is", findDuplicate(arr2) + "\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Time: O(n)  Space: O(n)
 var repeatedNumber = function(arr){
     let hashTable = new Set()
@@ -119,3 +159,5 @@ var repeatedNumber = function(arr){
 }
 
 console.log("\n" + repeatedNumber(arr3))
+
+

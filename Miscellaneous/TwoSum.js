@@ -14,7 +14,7 @@
 //iterate through until Sum - variable = value in hash table
 
 //Time: O(n^2)  Space: O(1)
-const array = [1,2,3,9]
+const array = [1,2,3,5]
 const array2 = [1,2,4,4]
 const target = 8
 var flag = false
